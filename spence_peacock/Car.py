@@ -4,19 +4,10 @@ class Car(object):
         self.speed=speed
         self.fuel=fuel
         self.mileage=mileage
-        self.tax=tax
-    def setCar(self,price,speed,fuel,mileage):
-        self.price=price
-        self.speed=speed
-        self.fuel=fuel
-        self.mileage=mileage
-    def setTax(price):
         if price>10000:
-            self.tax=.15*self.price
+            self.tax=1.15
         else:
-            self.tax=.12*self.price
-        return self
-        #print self.tax
+            self.tax=1.12
     def display_all(self):
         print "Price: {}".format(self.price)
         print "Speed: {}".format(self.speed)
@@ -24,15 +15,15 @@ class Car(object):
         print "Mileage: {}".format(self.mileage)
         print "Tax: {}".format(self.tax)
         print " "
-accord=Car(300,60,30,100000)
-ferrari=Car(400,30,30,0)
-camry=Car(500,60,40,5)
-truck=Car(600,60,50,200)
-dunebuggy=Car(100000,5,0,100)
-jeep=Car(800,60,30,10)
-print accord.display_all()
-print ferrari.display_all()
-print camry.display_all()
-print truck.display_all()
-print dunebuggy.display_all()
-print jeep.display_all()
+accord=Car(2000,"35mph","Full","15mpg")
+datsun=Car(2000,"5mph","Not Full","105mpg")
+camry=Car(2000,"15mph","Kind of Full","95mpg")
+truck=Car(2000,"25mph","Full", "25mpg")
+dunebuggy=Car(2000,"45mph","Empty","25mpg")
+jeep=Car(20000,"35mph","Empty","15mpg")
+accord.display_all()
+datsun.display_all()
+camry.display_all()
+truck.display_all()
+dunebuggy.display_all()
+jeep.display_all()
