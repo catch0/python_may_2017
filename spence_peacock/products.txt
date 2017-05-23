@@ -1,0 +1,22 @@
+(djangoEnv) C:\Users\spenc\Desktop\PYTHON-COURSE\python_stack\django\products>python manage.py shell
+Python 2.7.12 (v2.7.12:d33e0cf91556, Jun 27 2016, 15:19:22) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from apps.first_appp.models import Product
+>>> cannondale =Product(name="cannondale", description="the mid-level ride", weight=8,price=1600, cost=900,category="race bike")
+>>> Trek500 = Product(name="trek500", description="2017s best tri bike", weight=5, price=10000, cost=5000, category="TT bike")
+>>> Fuji_Kona= Product(name="FujiKona", description="the last bike you ever will need", weight=6,price=20000,cost=1600,category="full carbon bike")
+>>> products = Product.objects.all()
+>>> products
+<QuerySet [<Product: Product object>, <Product: Product object>, <Product: Product object>, <Product: Product object>, <Product: Product object>, <Product: Product object>, <Product: Product object>, <Product: Product object>]>
+>>> for Product in products:
+...     print Product.name, Product.description, Product.weight, Product.price, Product.cost, Product.category
+...
+giant defy An awesome Bike 10 1000 600 wicked fast bikes
+cannondale the mid-level ride 8 1600 900 race bike
+trek500 2017s best tri bike 5 10000 5000 TT bike
+FujiKona the last bike you ever will need 6 20000 1600 full carbon bike
+cannondale the mid-level ride 8 1600 900 race bike
+trek500 2017s best tri bike 5 10000 5000 TT bike
+cannondale the mid-level ride 8 1600 900 race bike
+cannondale the mid-level ride 8 1600 900 race bike
