@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<link rel = "stylesheet" type = "text/css" href="index.css">
+<title>Ninja Gold</title>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+   $(document).ready(function(){     
+   });
+</script>
+</head>
+<body>
+<h1>Ninja GOld</h1>
+<p> Your Gold: {{request.session.gold_count}}</p>
+<h3>Farm</h3>
+<p>earns 10-20 gold</p>
+<!--this is the farm form-->
+<form action="/money" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="farm">
+    <input type = "submit" value="git some gold">
+</form>
+<!--this is the cave form-->
+<h3>Cave</h3>
+<p>earns 5-10 gold</p>
+<form action="/money" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="cave">
+    <input type = "submit" value="git some gold">
+</form>
+<!--this is the house form-->
+<h3>House</h3>
+<p>earns 2-5 gold</p>
+<form action="/money" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="house">
+    <input type = "submit" value="git some gold">
+</form>
+<!--this is the casino form-->
+<h3>Casino</h3>
+<p>earns 2-5 gold</p>
+<form action="/money" method="post">
+    {% csrf_token %}
+    <input type="hidden" name="action" value="casino">
+    <input type = "submit" value="git some gold">
+</form>
+<form action ="/clear" method="POST"> 
+{% csrf_token %}
+<input type="hidden" name= "action" value="clear">
+<input type="submit" value="clear">
+</form>
+</body>
+</html> 
